@@ -17,7 +17,6 @@ async function makeApiCall(url, method, data = null) {
         throw new Error(`API request failed with status ${response.status}`);
     }
     
-    // Only try to parse JSON if there is content
     const text = await response.text();
     return text ? JSON.parse(text) : {};
     
